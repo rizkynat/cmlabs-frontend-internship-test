@@ -110,9 +110,9 @@
     <div class="container px-4 lg:px-8 mx-auto max-w-screen-xl text-gray-700 overflow-x-hidden">
         <!-- All Category Meals -->
         <div id="meal-container" class="max-w-4xl mx-auto mt-10 p-6 bg-white shadow-lg rounded-lg">
-    <!-- Loading Message -->
-    <div id="loading" class="text-center text-gray-600">Loading...</div>
-  </div>
+            <!-- Loading Message -->
+            <div id="loading" class="text-center text-gray-600">Loading...</div>
+        </div>
         <div data-aos="zoom-in-up" class="my-14 flex flex-col lg:flex-row lg:space-x-20">
         </div>
     </div>
@@ -160,42 +160,43 @@
 
     // Fetch categories from API
     async function fetchMeal() {
-      const mealId = getQueryParam('i');
-      const apiUrl = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`;
+        const mealId = getQueryParam('i');
+        const apiUrl = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`;
 
-      try {
-        const response = await fetch(apiUrl);
-        const data = await response.json();
-        
-        if (data.meals) {
-          const meal = data.meals[0];
-          console.log(meal)
-          displayMeal(meal);
-        } else {
-          document.getElementById('meal-container').innerHTML = 'Meal not found.';
+        try {
+            const response = await fetch(apiUrl);
+            const data = await response.json();
+
+            if (data.meals) {
+                const meal = data.meals[0];
+                console.log(meal)
+                displayMeal(meal);
+            } else {
+                document.getElementById('meal-container').innerHTML = 'Meal not found.';
+            }
+        } catch (error) {
+            console.error('Error fetching meal data:', error);
+            document.getElementById('meal-container').innerHTML = 'Error fetching meal data.';
         }
-      } catch (error) {
-        console.error('Error fetching meal data:', error);
-        document.getElementById('meal-container').innerHTML = 'Error fetching meal data.';
-      }
     }
 
     // Display meal details on the page
     function displayMeal(meal) {
-      const container = document.getElementById('meal-container');
-      function formatInstructions(instructions) {
-  // Replace \r\n and \n with a single <br> for HTML line breaks
-  let formatted = instructions.replace(/\r\n/g, '<br>').replace(/\n/g, '<br>').trim();
+        const container = document.getElementById('meal-container');
 
-  // Use a regular expression to find numbered steps and format them
-  formatted = formatted.replace(/(\d+)<br>/g, '$1. <br>'); // Add a dot after the number
+        function formatInstructions(instructions) {
+            // Replace \r\n and \n with a single <br> for HTML line breaks
+            let formatted = instructions.replace(/\r\n/g, '<br>').replace(/\n/g, '<br>').trim();
 
-  // Remove any unwanted double breaks before and after numbers
-  formatted = formatted.replace(/<br>\s*<br>/g, '<br>'); // Remove extra breaks
+            // Use a regular expression to find numbered steps and format them
+            formatted = formatted.replace(/(\d+)<br>/g, '$1. <br>'); // Add a dot after the number
 
-  return formatted;
-}
-      container.innerHTML = `
+            // Remove any unwanted double breaks before and after numbers
+            formatted = formatted.replace(/<br>\s*<br>/g, '<br>'); // Remove extra breaks
+
+            return formatted;
+        }
+        container.innerHTML = `
         <div class="w-full">
 
         <h1 class="text-3xl font-bold mt-6 mb-6 text-gray-800">${meal.strMeal}</h1>

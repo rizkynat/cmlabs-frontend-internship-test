@@ -108,22 +108,20 @@
     </div>
     <!-- container -->
     <div class="container px-4 lg:px-8 mx-auto max-w-screen-xl text-gray-700 overflow-x-hidden">
-
         <!-- All Category Meals -->
         <section class="bg-white">
-
             <!-- Header -->
             <div data-aos="flip-up" class="max-w-xl mx-auto text-center mt-24">
                 <h1 class="font-bold text-darken my-3 text-2xl">
                     <span>All </span><span id="categoryMeal"></span><span class="text-yellow-500"> Meals</span>
                 </h1>
             </div>
-              <!-- Grid Container -->
-  <div class="py-4 px-2 mx-auto max-w-screen-xl sm:py-4 lg:px-6">
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4" id="categoryGrid">
-      <!-- Dynamic Columns will be inserted here -->
-    </div>
-  </div>
+            <!-- Grid Container -->
+            <div class="py-4 px-2 mx-auto max-w-screen-xl sm:py-4 lg:px-6">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4" id="categoryGrid">
+                    <!-- Dynamic Columns will be inserted here -->
+                </div>
+            </div>
         </section>
         <div data-aos="zoom-in-up" class="my-14 flex flex-col lg:flex-row lg:space-x-20">
         </div>
@@ -189,13 +187,18 @@
     }
 
     // Render categories in the grid// Render categories in the masonry grid
-  function renderCategories(categories) {
-    const gridContainer = document.getElementById('categoryGrid');
-    const columns = [[], [], [], []]; // 4 Masonry columns
+    function renderCategories(categories) {
+        const gridContainer = document.getElementById('categoryGrid');
+        const columns = [
+            [],
+            [],
+            [],
+            []
+        ]; // 4 Masonry columns
 
-    // Distribute categories evenly across 4 columns
-    categories.forEach((category, index) => {
-      const card = `
+        // Distribute categories evenly across 4 columns
+        categories.forEach((category, index) => {
+            const card = `
         <div data-aos="fade-up" class="bg-white shadow-md rounded-lg overflow-hidden border border-gray-200">
         <a href="detail.html?i=${category.idMeal}">
           <img class="h-56 w-full object-cover" 
@@ -207,14 +210,14 @@
           </a>
         </div>
       `;
-      columns[index % 4].push(card);
-    });
+            columns[index % 4].push(card);
+        });
 
-    // Populate the grid with column content
-    gridContainer.innerHTML = columns
-      .map(col => `<div class="grid gap-4">${col.join('')}</div>`)
-      .join('');
-  }
+        // Populate the grid with column content
+        gridContainer.innerHTML = columns
+            .map(col => `<div class="grid gap-4">${col.join('')}</div>`)
+            .join('');
+    }
 
 
     // Call the function to fetch and render categories
