@@ -109,97 +109,11 @@
     <!-- container -->
     <div class="container px-4 lg:px-8 mx-auto max-w-screen-xl text-gray-700 overflow-x-hidden">
         <!-- All Category Meals -->
-<section class="bg-white">
-  <!-- Header -->
-  <div data-aos="flip-up" class="max-w-xl mx-auto text-center mt-24">
-    <h1 class="font-bold text-darken my-3 text-2xl">
-      <span id="strMeal"></span>
-    </h1>
+        <div id="meal-container" class="max-w-4xl mx-auto mt-10 p-6 bg-white shadow-lg rounded-lg">
+    <!-- Loading Message -->
+    <div id="loading" class="text-center text-gray-600">Loading...</div>
   </div>
-
-  <!-- Grid Container -->
-  <div class="py-4 px-2 mx-auto max-w-screen-xl sm:py-4 lg:px-6">
-    <div id="categoryGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4 h-full">
-      <!-- Dynamic Cards will be inserted here -->
-    </div>
-  </div>
-</section>
-        <!-- TESTIMONIAL -->
-        <div class="mt-24 flex flex-col-reverse md:flex-row items-start md:space-x-10">
-            <div data-aos="zoom-in-right" class="md:w-5/12">
-                <div class="flex items-center space-x-20 mb-5">
-                    <span class="border border-gray-300 w-14 absolute"></span>
-                    <h1 class="text-gray-400 tracking-widest text-sm">TESTIMONIAL</h1>
-                </div>
-                <h1 class="font-semibold text-darken text-2xl lg:pr-40">What They Say?</h1>
-                <p class="text-gray-500 my-5 lg:pr-36">WeMeal has received over 100k positive reviews from food lovers worldwide.</p>
-                <p class="text-gray-500 my-5 lg:pr-36">Many users have discovered their favorite meals and recipes through WeMeal.</p>
-                <p class="text-gray-500 my-5 lg:pr-36">How about you? Share your experience with us!</p>
-                <button class="flex items-center space-x-3 pl-3 border-b border-l border-t border-yellow-500 text-yellow-500 font-medium my-4 focus:outline-none transform transition hover:scale-110 duration-300 ease-in-out rounded-full">
-                    <span>Share your experience</span>
-                    <div class="border border-yellow-500 h-14 w-14 rounded-full flex items-center justify-center">
-                        <svg class="w-5 h-5" viewBox="0 0 26 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M25.7071 8.70711C26.0976 8.31658 26.0976 7.68342 25.7071 7.2929L19.3431 0.928934C18.9526 0.538409 18.3195 0.538409 17.9289 0.928934C17.5384 1.31946 17.5384 1.95262 17.9289 2.34315L23.5858 8L17.9289 13.6569C17.5384 14.0474 17.5384 14.6805 17.9289 15.0711C18.3195 15.4616 18.9526 15.4616 19.3431 15.0711L25.7071 8.70711ZM-8.74228e-08 9L25 9L25 7L8.74228e-08 7L-8.74228e-08 9Z" fill="#F48C06" />
-                        </svg>
-                    </div>
-                </button>
-            </div>
-            <div data-aos="zoom-in-left" class="md:w-7/12">
-                <img class="md:w-10/12 mx-auto" src="img/testimonials.png">
-            </div>
-        </div>
-        <!-- Latest News and Resources -->
-        <div data-aos="zoom-in" class="mt-16 text-center">
-            <h1 class="text-darken text-2xl font-semibold">Latest News and Resources</h1>
-            <p class="text-gray-500 my-5">Stay up-to-date with the newest developments at WeMeal</p>
-        </div>
         <div data-aos="zoom-in-up" class="my-14 flex flex-col lg:flex-row lg:space-x-20">
-            <div class="lg:w-6/12">
-                <img class="w-full mb-6" src="img/laptop-news.png">
-                <span class="bg-yellow-300 text-darken font-semibold px-4 py-px text-sm rounded-full">NEWS</span>
-                <h1 class="text-gray-800 font-semibold my-3 text-xl">WeMeal Launches New Features to Personalize Your Meal Experience</h1>
-                <p class="text-gray-500 mb-3"> WeMeal has introduced custom meal plans and new recipe categories to help users enjoy a personalized experience...</p>
-                <a href="" class="underline">Read more</a>
-            </div>
-            <div class="lg:w-7/12 flex flex-col justify-between mt-12 space-y-5 lg:space-y-0 lg:mt-0">
-                <div class="flex space-x-5">
-                    <div class="w-4/12">
-                        <div class="relative">
-                            <img class="rounded-xl w-full" src="img/children-laptop.png">
-                            <span class="absolute bottom-2 right-2 bg-yellow-300 text-darken font-semibold px-4 py-px text-sm rounded-full hidden sm:block">PRESS RELEASE</span>
-                        </div>
-                    </div>
-                    <div class="w-8/12">
-                        <h1 class="text-gray-800 text-sm sm:text-lg font-semibold">WeMeal Adds 50+ New Recipes for the Holiday Season</h1>
-                        <p class="text-gray-500 my-2 sm:my-4 text-xs sm:text-md">Prepare for the holidays with exciting new meal ideas, including vegetarian and gluten-free options...</p>
-                    </div>
-                </div>
-                <div class="flex space-x-5">
-                    <div class="w-4/12">
-                        <div class="relative">
-                            <img class="rounded-xl w-full" src="img/girl-laptop.png">
-                            <span class="absolute bottom-2 right-2 bg-yellow-300 text-darken font-semibold px-4 py-px text-sm rounded-full hidden sm:block">NEWS</span>
-                        </div>
-                    </div>
-                    <div class="w-8/12">
-                        <h1 class="text-gray-800 text-sm sm:text-lg font-semibold"> Plan Your Meals with WeMeal’s New Weekly Planner</h1>
-                        <p class="text-gray-500 my-2 sm:my-4 text-xs sm:text-md">Organize your week with our easy-to-use planner, helping you stay on track with healthy eating...
-                        </p>
-                    </div>
-                </div>
-                <div class="flex space-x-5">
-                    <div class="w-4/12">
-                        <div class="relative">
-                            <img class="rounded-xl w-full" src="img/cat-laptop.png">
-                            <span class="absolute bottom-2 right-2 bg-yellow-300 text-darken font-semibold px-4 py-px text-sm rounded-full hidden sm:block">NEWS</span>
-                        </div>
-                    </div>
-                    <div class="w-8/12">
-                        <h1 class="text-gray-800 text-sm sm:text-lg font-semibold">WeMeal Partners with Top Chefs to Bring Exclusive Recipes</h1>
-                        <p class="text-gray-500 my-2 sm:my-4 text-xs sm:text-md">Enjoy exclusive recipes crafted by renowned chefs, available only on WeMeal...</p>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
     <!-- .container -->
@@ -239,54 +153,92 @@
     AOS.init();
     </script>
     <script>
-        function getQueryParam(param) {
-      const urlParams = new URLSearchParams(window.location.search);
-      return urlParams.get(param);
+    function getQueryParam(param) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(param);
     }
 
-    // Get the 'c' parameter from the URL
-    const idMeal = getQueryParam('i');
     // Fetch categories from API
-  const apiUrl = 'http://www.themealdb.com/api/json/v1/1/lookup.php?i='+idMeal;
+    async function fetchMeal() {
+      const mealId = getQueryParam('i');
+      const apiUrl = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`;
 
-// Fetch categories from API
-async function fetchCategories() {  
-  try {
-    const response = await fetch(apiUrl);
-    const data = await response.json();
-    console.log(data.meals)
-    renderCategories(data.meals);
-  } catch (error) {
-    console.error('Error fetching categories:', error);
-  }
+      try {
+        const response = await fetch(apiUrl);
+        const data = await response.json();
+        
+        if (data.meals) {
+          const meal = data.meals[0];
+          console.log(meal)
+          displayMeal(meal);
+        } else {
+          document.getElementById('meal-container').innerHTML = 'Meal not found.';
+        }
+      } catch (error) {
+        console.error('Error fetching meal data:', error);
+        document.getElementById('meal-container').innerHTML = 'Error fetching meal data.';
+      }
+    }
+
+    // Display meal details on the page
+    function displayMeal(meal) {
+      const container = document.getElementById('meal-container');
+      function formatInstructions(instructions) {
+  // Replace \r\n and \n with a single <br> for HTML line breaks
+  let formatted = instructions.replace(/\r\n/g, '<br>').replace(/\n/g, '<br>').trim();
+
+  // Use a regular expression to find numbered steps and format them
+  formatted = formatted.replace(/(\d+)<br>/g, '$1. <br>'); // Add a dot after the number
+
+  // Remove any unwanted double breaks before and after numbers
+  formatted = formatted.replace(/<br>\s*<br>/g, '<br>'); // Remove extra breaks
+
+  return formatted;
 }
+      container.innerHTML = `
+        <div class="w-full">
 
-// Render categories in the grid
-function renderCategories(categories) {
-  const gridContainer = document.getElementById('categoryGrid');
-  gridContainer.innerHTML = ''; // Clear any previous content
+        <h1 class="text-3xl font-bold mt-6 mb-6 text-gray-800">${meal.strMeal}</h1>
+          <img
+            src="${meal.strMealThumb}"
+            alt="${meal.strMeal}"
+            class="w-full rounded-lg"
+          />
+        </div>
+        <p class="mt-4 text-gray-600">${formatInstructions(meal.strInstructions)}</p>
+        <div class="mt-8">
+          <h2 class="text-2xl font-semibold text-gray-700">Recipe:</h2>
+          <ul class="list-disc pl-6 mt-2 space-y-2 text-gray-600">
+            ${meal.strIngredient1 ? `<li>${meal.strIngredient1} - ${meal.strMeasure1}</li>` : ''}
+            ${meal.strIngredient2 ? `<li>${meal.strIngredient2} - ${meal.strMeasure2}</li>` : ''}
+            ${meal.strIngredient3 ? `<li>${meal.strIngredient3} - ${meal.strMeasure3}</li>` : ''}
+            ${meal.strIngredient4 ? `<li>${meal.strIngredient4} - ${meal.strMeasure4}</li>` : ''}
+            ${meal.strIngredient5 ? `<li>${meal.strIngredient5} - ${meal.strMeasure5}</li>` : ''}
+            ${meal.strIngredient6 ? `<li>${meal.strIngredient6} - ${meal.strMeasure6}</li>` : ''}
+            ${meal.strIngredient7 ? `<li>${meal.strIngredient7} - ${meal.strMeasure7}</li>` : ''}
+            ${meal.strIngredient8 ? `<li>${meal.strIngredient8} - ${meal.strMeasure8}</li>` : ''}
+            ${meal.strIngredient9 ? `<li>${meal.strIngredient9} - ${meal.strMeasure9}</li>` : ''}
+            ${meal.strIngredient10 ? `<li>${meal.strIngredient10} - ${meal.strMeasure10}</li>` : ''}
+          </ul>
+        </div>
+        <div class="mt-8">
+          <h2 class="text-2xl font-semibold text-gray-700 mb-4">Watch the Tutorial:</h2>
+          <iframe
+            class="w-full aspect-w-16 aspect-h-9 rounded-lg"
+            src="https://www.youtube.com/embed/${meal.strYoutube.split('=')[1]}"
+            style="height: 400px"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+      `;
+    }
 
-  categories.forEach((category) => {
-
-    //const titleCategoryMeal = document.getElementById('strMeal').textContent = category.strMeal 
-    const categoryCard = `
-      <div data-aos="fade-up" class="col-span-2 sm:col-span-1 md:col-span-1 bg-gray-50 h-auto flex flex-col">
-        <a href="#" class="group relative flex flex-col overflow-hidden rounded-lg px-4 pb-4 pt-40 flex-grow">
-          <img src="${category.strMealThumb}" 
-               alt="${category.strMeal}" 
-               class="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out">
-          <div class="absolute inset-0 bg-gradient-to-b from-gray-900/25 to-gray-900/5"></div>
-          <h3 class="z-10 text-2xl font-medium text-black absolute top-0 left-0 p-4">${category.strMeal}</h3>
-        </a>
-      </div>
-    `;
-    gridContainer.innerHTML += categoryCard;
-  });
-}
-
-// Call the function to fetch and render categories
-fetchCategories();
-</script>
+    // Call the fetch function on page load
+    window.onload = fetchMeal;
+    </script>
 </body>
 
 </html>
