@@ -1,7 +1,5 @@
 # WeMeal
 
-## How to run
-
 ## Built with:
 - Tailwind CSS ^2.0
 - Alpine JS ^2.*
